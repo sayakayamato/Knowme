@@ -13,7 +13,7 @@ export function BasicCard() {
       <div className="profilepage_top">
         <Flex>
           <Box p="4" bg="" className="return_button">
-            <Link to="/MyProfilePage">
+            <Link to="/myprofile">
               <ChevronLeftIcon boxSize={6} />
             </Link>
           </Box>

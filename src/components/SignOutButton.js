@@ -1,8 +1,12 @@
 import { auth } from "../lib/firebase";
+import { useNavigate } from "react-router-dom";
 
 export const SignOutButton = () => {
+
+  const navigate = useNavigate();
   const signOut = () => {
     auth.signOut();
+    navigate("/login");
   };
   return (
     <button onClick={signOut} style={{ width: "20px", height: "20px" }}>

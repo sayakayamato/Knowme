@@ -10,7 +10,7 @@ import { MdHome } from "react-icons/md";
 import { MdOutlineArticle } from "react-icons/md";
 import { MdGroup } from "react-icons/md";
 import { useAuthContext } from "../../contexts/AuthContext";
-import { SignOutButton } from "../SignOutButton";
+
 
 export function UnderTabBar() {
   const { user } = useAuthContext();
@@ -23,11 +23,11 @@ export function UnderTabBar() {
         <div className="top_bar">
           <Flex>
             <Link to="/" className="service_name">
-              Profile3.0
+              Knowme!
             </Link>
             <Spacer />
 
-            <Link to="/MyProfilePage">
+            <Link to="/myprofile">
               <Wrap className="top_profile_icon">
                 <WrapItem>
                   <Avatar name="Dan Abrahmov" />
@@ -35,7 +35,7 @@ export function UnderTabBar() {
               </Wrap>
             </Link>
           </Flex>
-          <SignOutButton />
+
         </div>
         <Tabs
           variant="soft-rounded"
