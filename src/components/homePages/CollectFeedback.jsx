@@ -48,7 +48,7 @@ export function CollectFeedback() {
 
   const dataCreate = useDataCreate;
 
-  const [feedId, setFeedId] = useState();
+
 
   const registerNewQuestion = () => {
     const tableName = "questions";
@@ -58,17 +58,14 @@ export function CollectFeedback() {
       content: value,
       createdAt: new Date().toISOString(),
     };
-    const createdPromise = dataCreate(tableName, struct);
-    // TODO: ページ遷移処理
-    createdPromise.then((value) => {
-      setFeedId(value);
-    });
-    console.log(feedId);
-    setFeedUrl(
-      "https://knowme.vercel.app/chats/"+
-        String(feedId)
-    );
-    onOpen();
+    
+    dataCreate(tableName, struct)
+      .then((value) => {
+        setFeedUrl("https://knowme.vercel.app/chats/" + String(value));
+      })
+      .then(() => {
+        onOpen();
+      });
   };
 
   const [feedUrl, setFeedUrl] = useState();
