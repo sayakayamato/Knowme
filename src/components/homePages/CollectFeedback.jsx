@@ -65,7 +65,7 @@ export function CollectFeedback() {
     });
     console.log(feedId);
     setFeedUrl(
-      "https://profile3-0-profile-project-onfm.vercel.app/chats/" +
+      "https://knowme.vercel.app/chats/"+
         String(feedId)
     );
     onOpen();
