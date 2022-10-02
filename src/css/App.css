@@ -11,8 +11,15 @@
     background: radial-gradient(circle, rgba(49,62,133,1) 0%, rgba(41,18,73,1) 100%); */
     /* background: rgb(52,52,87);
 background: linear-gradient(90deg, rgba(52,52,87,1) 1%, rgba(35,32,45,1) 100%); */
-background: rgb(113,113,182);
-background: linear-gradient(0deg, rgba(113,113,182,1) 1%, rgba(22,11,60,1) 100%);
+/* background: rgb(113,113,182);
+background: linear-gradient(0deg, rgba(113,113,182,1) 1%, rgba(22,11,60,1) 100%); */
+/* background: rgb(255,247,110);
+background: linear-gradient(19deg, rgba(255,247,110,1) 0%, rgba(255,198,149,1) 50%, rgba(152,221,255,1) 100%); */
+/* background: rgb(110,255,208);
+background: linear-gradient(19deg, rgba(110,255,208,1) 0%, rgba(169,149,255,1) 50%, rgba(255,152,152,1) 100%); */
+background: rgb(190,255,241);
+background: linear-gradient(19deg, rgba(190,255,241,1) 0%, rgba(169,149,255,1) 50%, rgba(255,152,152,1) 100%);
+
     
 /* background: rgb(86,103,195);
 background: radial-gradient(circle, rgba(86,103,195,1) 0%, rgba(88,28,171,1) 100%); */
