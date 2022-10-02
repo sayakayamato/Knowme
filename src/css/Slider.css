@@ -31,10 +31,18 @@ body {
   background: linear-gradient(90deg, rgba(57,19,70,0.65) 1%, rgba(49,83,172,0.64) 100%); */
   /* background: rgb(245,71,134);
 background: linear-gradient(90deg, rgba(245,71,134,0.7) 1%, rgba(225,40,255,0.7) 100%); */
-background: rgb(138,144,187);
-background: linear-gradient(0deg, rgba(138,144,187,1) 1%, rgba(115,94,184,1) 100%);
+/* background: rgb(138,144,187);
+background: linear-gradient(0deg, rgba(138,144,187,1) 1%, rgba(115,94,184,1) 100%); */
   border-radius: 20px;
   height: 200px;
+
+  background-color: rgba(255, 255, 255, 0.1); /* 背景色 */
+  border: 1px solid rgba(255, 255, 255, 0.4); /* ボーダー */
+  border-right-color: rgba(255, 255, 255, 0.2);
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+  vertically-webkit-backdrop-filter: blur(20px); /* ぼかしエフェクト */
+  backdrop-filter: blur(20px);
+  /* box-shadow: 0 5px 20px rgba(255, 152, 79, 0.5); 薄い影 */
   /* box-shadow: 5px 5px 5px ; */
 
   /* Center slide text vertically */
