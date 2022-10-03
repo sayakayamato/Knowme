@@ -1,24 +1,32 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { ChatsContent } from "./ChatsContents";
 import { useLocation } from "react-router-dom";
 import { ChevronLeftIcon } from "@chakra-ui/icons";
 // import { useParams } from "react-router-dom";
 
 import "../../css/Chats.css";
+import { useDataRead } from "../../hooks/useDataRead";
+import { useEffect, useState } from "react";
 
 export function Chats() {
   //useLocationを使ってFeedContentsから値を受け取る
   const location = useLocation();
-  console.log(location);
-  // TODO: 外部流入の場合、locationが無いので、投稿IDから以下のデータを取得する必要あり
-  // if (!location) {
+  const dataRead = useDataRead;
+  const params = useParams();
 
-  // }
-  const questiontext = location.state.whatfeedtext;
-  console.log(questiontext);
-  const feedId = location.state.pushQuestionID;
-  console.log(feedId);
+  const [questiontext, setQuestiontext] = useState("Loading...");
+  const feedId = params.feedID;
 
+  useEffect(() => {
+    if (!location.state) {
+      dataRead("questions", params.feedID).then((res) => {
+        console.log(res);
+        setQuestiontext(res.content);
+      });
+    } else {
+      setQuestiontext(location.state.whatfeedtext);
+    }
+  }, []);
   return (
     <>
       <div className="chats_header">

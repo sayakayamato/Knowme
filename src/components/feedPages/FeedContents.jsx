@@ -1,7 +1,6 @@
 import React from "react";
 import { Box } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 import { useDataList } from "../../hooks/useDataList";
 import { useAuthContext } from "../../contexts/AuthContext";
 
@@ -13,42 +12,9 @@ export function FeedContents() {
 
   const { user } = useAuthContext();
   const logedInUserId = user.uid;
-  // const logedInUsername = user.displayName;
-
-  // const [friendList, setFriendList] = useState([])
-  //
-  // setFriendList([1, 2, 3, 4, 5, 6])
   // TODO: フレンドリストを追加する必要あり
   const friendList = [logedInUserId];
 
-  //テストデータ
-  //   const testFeedContents = [
-  //     {
-  //       id: 0,
-  //       userID: 5,
-  //       username: "sayaka yamato",
-  //       text: "私の長所ってなんですか？",
-  //     },
-  //     {
-  //       id: 1,
-  //       userID: 5,
-  //       username: "sayaka yamato",
-  //       text: "私の特徴ってなんですかね？",
-  //     },
-  //     {
-  //       id: 2,
-  //       userID: 10,
-  //       username: "masato",
-  //       text: "今日のプレゼンどうでした？",
-  //     },
-  //     { id: 3, userID: 2, username: "natumi", text: "私って何色が似合うかなあ" },
-  //     {
-  //       id: 4,
-  //       userID: 5,
-  //       username: "sayaka yamato",
-  //       text: "私の直すべきところってどこかな...",
-  //     },
-  //   ];
   const dataList = useDataList;
   const tableName = "questions";
   const queryKey = "userId";
@@ -61,40 +27,23 @@ export function FeedContents() {
       } else {
         return data;
       }
-      // return queryValue;
     })
     .filter((e) => typeof e !== "undefined");
-  //   console.log(feedContents);
 
   //クリックされた質問判定
   const WhatFeed = (e) => {
-    console.log(e);
     //配列のキーとidが一致してるときにできる処理...
     const pushQuestionID = e.target.id;
-    console.log(pushQuestionID);
     const whatfeedtext = e.target.innerText; //記入した質問本文を定数に入れる
     navigate(`/chats/${pushQuestionID}`, {
       state: { whatfeedtext: whatfeedtext, pushQuestionID: pushQuestionID },
     }); //ページ遷移と共に値を持っていく
   };
 
-  //   const feedlist = [];
-  //   for (let i = 0; i < testFeedContents.length; i++) {
-  //     feedlist.push(
-  //       <Box bg="white" w="100%" p={4} color="black" mb={5} key={feedlist}>
-  //         <p>{testFeedContents[i].username}</p>
-  //         <p onClick={WhatFeed} id={i}>
-  //           {testFeedContents[i].text}
-  //         </p>
-  //       </Box>
-  //     );
-  //   }
-
   return (
     <>
       {feedContents.map((data) =>
         Object.entries(data).map(([key, item]) => {
-          //   console.log(key, item.userId);
           return (
             <Box
               className="feed_box"

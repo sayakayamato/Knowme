@@ -30,7 +30,7 @@ export function UnderTabBar() {
             <Link to="/myprofile">
               <Wrap className="top_profile_icon">
                 <WrapItem>
-                  <Avatar name="Dan Abrahmov" />
+                <Avatar name="Dan Abrahmov" src="https://bit.ly/dan-abramov"/>
                 </WrapItem>
               </Wrap>
             </Link>

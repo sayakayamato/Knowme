@@ -10,7 +10,7 @@ export function ProfileTabContents() {
     return (
         <>
             <ProfileTabHome />
-            {/* <BasicCard /> */}
+            
         </>
     )
 }

@@ -6,6 +6,7 @@ import { RouterConfig } from "./RouterConfig";
 // For test
 // import { auth } from "./lib/firebase";
 import { AuthProvider } from "./contexts/AuthContext";
+import { TestFirebase } from "./test/TestFirebase";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <RouterConfig />
           </BrowserRouter>
         </ChakraProvider>
+      
       </div>
     </AuthProvider>
   );

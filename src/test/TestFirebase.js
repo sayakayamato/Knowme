@@ -72,7 +72,7 @@ export const TestFirebase = () => {
     <>
       <div style={{ backgroundColor: "white", color: "black" }}>
         <p>TestFirebase</p>
-        {/* <input
+        <input
           style={{ backgroundColor: "gray" }}
           onChange={(e) => setInputValue(e.target.value)}
           placeholder="input your name"
@@ -88,15 +88,15 @@ export const TestFirebase = () => {
           }}
         >
           ボタン
-        </button> */}
+        </button>
         <></>
       </div>
       <FirebaseLogin />
-      {/* <CreateUser />
+      <CreateUser />
       <br />
       <CreateCategory />
       <br />
-      <CreateQuestionSample/> */}
+      <CreateQuestionSample/>
     </>
   );
 };
