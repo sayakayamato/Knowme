@@ -57,7 +57,7 @@ export function UnderTabBar() {
             </TabPanel>
           </TabPanels>
           <TabList className="under_nav_bar">
-            <Tab color={"yellow.50"}>
+            <Tab color={"yellow.0"}>
               <MdHome />
               Home
             </Tab>

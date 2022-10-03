@@ -21,7 +21,11 @@ export function ChatsContent({ feedId }) {
   const [loggedInUsername, setLoggedInUsername] = useState("");
 
   const dataList = useDataList;
+  console.log(tableName);
+  console.log(queryKey);
+  console.log(queryValue);
   const { data } = dataList(tableName, queryKey, queryValue);
+  
 
   useEffect(() => {
     if (user) {
@@ -56,7 +60,7 @@ export function ChatsContent({ feedId }) {
   return (
     <>
       <div className="chats_answer">
-        {Object.entries(data).map(([key, item]) => {
+        {data && Object.entries(data).map(([key, item]) => {
           return (
             <div
               key={key}
