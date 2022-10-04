@@ -8,18 +8,44 @@
     padding: 16px;
 }
 
+.top_bar{
 
-.home_greed{
-    margin-top: 100px;
-    font-family: 'ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN',sans-serif;
-    color: white;
-    
-    background-color: rgba(255, 255, 255, 0.2); 
-  border: 1px solid rgba(255, 255, 255, 0.4); /* ボーダー */
+}
+
+.home_contents{
+    /* background-color: rgba(252, 252, 252, 0.2);  */
+    /* background: rgb(125,125,255);
+background: linear-gradient(19deg, rgba(125,125,255,0.6) 0%, rgba(187,78,224,0.6) 50%, rgba(120,109,231,0.6) 100%); */
+  /* border: 1px solid rgba(255, 255, 255, 0.4); 
   border-right-color: rgba(255, 255, 255, 0.2);
   border-bottom-color: rgba(255, 255, 255, 0.2);
-  vertically-webkit-backdrop-filter: blur(20px); /* ぼかしエフェクト */
+  vertically-webkit-backdrop-filter: blur(20px); 
   backdrop-filter: blur(20px);
+  margin-top: 100px;
+  border-radius: 50px; */
+}
+
+
+.home_greed{
+    /* margin-top: 100px; */
+    font-family: 'ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN',sans-serif;
+    color: black;
+    
+    /* background-color: rgba(255, 255, 255, 0.2); 
+  border: 1px solid rgba(255, 255, 255, 0.4); /* ボーダー */
+  /* border-right-color: rgba(255, 255, 255, 0.2);
+  border-bottom-color: rgba(255, 255, 255, 0.2); */
+  /* vertically-webkit-backdrop-filter: blur(20px); ぼかしエフェクト */
+  /* backdrop-filter: blur(20px);  */
+  /* background: rgb(190,255,241);
+background: linear-gradient(19deg, rgba(190,255,241,1) 0%, rgba(169,149,255,1) 50%, rgba(255,152,152,1) 100%); */
+/* background: #ff5757; */
+/* background: white; */
+
+/* background: rgb(125,125,255);
+background: linear-gradient(19deg, rgba(125,125,255,0.6) 0%, rgba(187,78,224,0.6) 50%, rgba(120,109,231,0.6) 100%); */
+
+/* background: #FFF3E1; */
   border-radius: 20px;
 }
 

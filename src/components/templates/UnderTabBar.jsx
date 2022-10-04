@@ -42,9 +42,10 @@ export function UnderTabBar() {
           colorScheme="whiteAlpha"
           isFitted="true"
           className="under_tab_bar"
+          defaultIndex={1}
         >
           <TabPanels>
-            <TabPanel>
+            <TabPanel p={0}>
               <HomeContents />
             </TabPanel>
             <TabPanel>

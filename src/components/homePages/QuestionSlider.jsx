@@ -52,23 +52,23 @@ export function QuestionSlider() {
 
   return (
     <>
-      <Swiper
-        slidesPerView={3}
-        spaceBetween={10}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination]}
-        className="mySwiper"
+      <div
+        // slidesPerView={3}
+        // spaceBetween={10}
+        // pagination={{
+        //   clickable: true,
+        // }}
+        // modules={[Pagination]}
+        className="category_wrap"
       >
         {Object.entries(data).map(([key, item]) => (
-          <SwiperSlide key={key}>
+          <div key={key} className="category_box">
             <button onClick={WhatCategory} id={key}>
               {String(item.content)}
             </button>
-          </SwiperSlide>
+          </div>
         ))}
-      </Swiper>
+      </div>
     </>
   );
 }

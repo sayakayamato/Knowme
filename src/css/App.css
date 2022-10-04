@@ -12,21 +12,32 @@
     /* background: rgb(52,52,87);
 background: linear-gradient(90deg, rgba(52,52,87,1) 1%, rgba(35,32,45,1) 100%); */
 /* background: rgb(113,113,182);
-background: linear-gradient(0deg, rgba(113,113,182,1) 1%, rgba(22,11,60,1) 100%); */
-/* background: rgb(255,247,110);
-background: linear-gradient(19deg, rgba(255,247,110,1) 0%, rgba(255,198,149,1) 50%, rgba(152,221,255,1) 100%); */
+background: linear-gradient(0deg, rgba(113,113,182,1) 1%, rgba(22,11,60,1) 100%);  */
+background: rgb(255,247,110);
+background: linear-gradient(19deg, rgba(255,247,110,1) 0%, rgba(255,198,149,1) 50%, rgba(152,221,255,1) 100%);
+/* ↑いい感じのやつ */
+
 /* background: rgb(190,255,241);
 background: linear-gradient(19deg, rgba(190,255,241,1) 0%, rgba(169,149,255,1) 50%, rgba(255,152,152,1) 100%); */
-background: rgb(252,255,154);
-background: linear-gradient(19deg, rgba(252,255,154,1) 0%, rgba(207,149,255,1) 50%, rgba(103,166,255,1) 100%);
+/* background: rgb(252,255,154);
+background: linear-gradient(19deg, rgba(252,255,154,1) 0%, rgba(207,149,255,1) 50%, rgba(103,166,255,1) 100%); */
+/* background: black; */
+/* background: rgb(21,12,51); 
+background: linear-gradient(19deg, rgba(59,61,71,1) 0%, rgba(21,12,51,0.8) 100%);  */
 
-    
+/* background: rgb(125,125,255);
+background: linear-gradient(19deg, rgba(125,125,255,0.6) 0%, rgba(187,78,224,0.6) 50%, rgba(120,109,231,0.6) 100%); */
+
+/* background: #ff5757; */
 
     overflow:  scroll;
 
     color: white;
     border: 1px solid;
     /* font-family: 'TsukuARdGothic-Regular',sans-serif; */
+    /* background: rgb(255,230,197);
+    background: linear-gradient(19deg, rgba(255,230,197,1) 0%, rgba(243,211,255,1) 100%); */
+    
 }
 
 
@@ -34,6 +45,8 @@ background: linear-gradient(19deg, rgba(252,255,154,1) 0%, rgba(207,149,255,1) 5
     position: absolute;
     bottom: 0;
     width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    height: 7%;
 }
 
 
@@ -130,11 +143,11 @@ background: linear-gradient(19deg, rgba(252,255,154,1) 0%, rgba(207,149,255,1) 5
 }
 .feed_add_button{
     border-radius: 100%;
-    width: 15vw;
-    height: 15vw;
+    width: 50px;
+    height: 50px;
     position: absolute;
         top: 85%;
-        left: 80%;
+        left: 85%;
     background: rgb(225,40,255);
     background: linear-gradient(0deg, rgba(225,40,255,0.9) 1%, rgba(245,71,134,0.9) 100%);
     font-size: 2rem;
