@@ -11,12 +11,13 @@ export function HomeContents() {
           {/* <p>Welcome!</p>
           <p>Please hear myself!</p> */}
         </div>
-        <p className="home_greed_regular">あなたについて質問してみよう！</p>
+        <div className="home_greed_regular">
+        <p>カテゴリを選んで</p>
+        <p>友達に質問してみよう！</p>
+        </div>
       </div>
       <div className="home_contents">
-        <div className="q_category">
-          
-        </div>
+        
 
         <QuestionSlider />
       </div>

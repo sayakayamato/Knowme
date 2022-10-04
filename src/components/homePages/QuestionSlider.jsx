@@ -64,7 +64,7 @@ export function QuestionSlider() {
         {Object.entries(data).map(([key, item]) => (
           <div key={key} className="category_box">
             <button onClick={WhatCategory} id={key}>
-              {String(item.content)}
+              <div className="category_name">{String(item.content)}</div>
             </button>
           </div>
         ))}

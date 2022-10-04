@@ -9,7 +9,9 @@
 }
 
 .top_bar{
-
+    /* background: rgb(255,247,110);
+background: linear-gradient(19deg, rgba(255,247,110,1) 0%, rgba(255,198,149,1) 50%, rgba(152,221,255,1) 100%); */
+/* background: rgba(0,0,0,0.7); */
 }
 
 .home_contents{
@@ -28,7 +30,7 @@ background: linear-gradient(19deg, rgba(125,125,255,0.6) 0%, rgba(187,78,224,0.6
 
 .home_greed{
     /* margin-top: 100px; */
-    font-family: 'ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN',sans-serif;
+    
     color: black;
     
     /* background-color: rgba(255, 255, 255, 0.2); 
@@ -46,23 +48,20 @@ background: linear-gradient(19deg, rgba(190,255,241,1) 0%, rgba(169,149,255,1) 5
 background: linear-gradient(19deg, rgba(125,125,255,0.6) 0%, rgba(187,78,224,0.6) 50%, rgba(120,109,231,0.6) 100%); */
 
 /* background: #FFF3E1; */
-  border-radius: 20px;
+    border-radius: 20px;
 }
 
-.home_greed_bold{
+/* .home_greed_bold{
     font-weight: bold;
     font-size: 36px;
-}
+    text-slign: center;
+} */
 
 .home_greed_regular{
-    font-size: 16px;
-    margin: 20px, 0px;
-}
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom:  30px;
 
-.q_category{
-    margin-top: 100px;
-    margin-bottom: 20px;
-    font-size: 16px;
 }
 
 
