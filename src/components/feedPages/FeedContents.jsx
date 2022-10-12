@@ -12,8 +12,11 @@ export function FeedContents() {
 
   const { user } = useAuthContext();
   const logedInUserId = user.uid;
+
   // TODO: フレンドリストを追加する必要あり
-  const friendList = [logedInUserId];
+  // const friendList = [logedInUserId];
+  const userList = ["dCmUF37YQBSRce5Kd2nBYyZLqAb2", "dCmUF37YQBSRce5Kd2nBYyZLqAb2", "kCJ6rquI08Vf1kE4ZEUbst8NAii2", "U9WMPUnhbfTjb9GmVcJRdxADP0a2"]
+  const friendList = [logedInUserId, ...userList];
 
   const dataList = useDataList;
   const tableName = "questions";

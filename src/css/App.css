@@ -3,6 +3,7 @@
     height: 100vh;
     margin: 0 auto;
     overflow:  scroll;
+    /* background: #EFEFEF; */
     /* background: rgb(49,83,172);
     background: linear-gradient(0deg, rgba(49,83,172,0.64) 0%, rgba(73,42,84,1) 100%); */
     /* background: rgb(49,62,133);
@@ -11,8 +12,11 @@
     background: radial-gradient(circle, rgba(49,62,133,1) 0%, rgba(41,18,73,1) 100%); */
     
 
+    /* background: rgb(239,137,202);
+    background: linear-gradient(41deg, rgba(239,137,202,1) 0%, rgba(236,154,21,1) 100%); */
 background: rgb(255,247,110);
 background: linear-gradient(19deg, rgba(255,247,110,1) 0%, rgba(255,198,149,1) 50%, rgba(152,221,255,1) 100%);
+
 /* ↑いい感じのやつ */
 
 /* background: rgb(190,255,241);
@@ -39,7 +43,6 @@ background: linear-gradient(19deg, rgba(125,125,255,0.6) 0%, rgba(187,78,224,0.6
     background: linear-gradient(41deg, rgba(218,169,255,1) 0%, rgba(255,169,105,1) 100%); */
     /* background: rgb(218,169,255);
 background: linear-gradient(41deg, rgba(218,169,255,1) 0%, rgba(117,211,249,1) 100%); */
-
     
 }
 

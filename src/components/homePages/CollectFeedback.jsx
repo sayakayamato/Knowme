@@ -89,7 +89,7 @@ export function CollectFeedback() {
           </Link>
           {/* </Box> */}
           <Text fontSize="xl" className="collect_feedback_title">
-            フィードバック募集画面
+            フィードバックを募集する
           </Text>
         </Flex>
       </div>

@@ -7,7 +7,7 @@ export function ObjectiveContents() {
         <>
             <Input placeholder='Basic usage' />
             <Box bg='white' w='100%' h='100%' p={4} color='tomato'>
-                This is the Box
+                <img src="wardclowd.png" alt="" />
             </Box>
         </>
     )
