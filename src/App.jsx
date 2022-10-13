@@ -11,14 +11,13 @@ import { AuthProvider } from "./contexts/AuthContext";
 function App() {
   return (
     <AuthProvider>
-      <div className="phone_size">
-        <ChakraProvider>
+      <ChakraProvider>
+        <div className="phone_size">
           <BrowserRouter>
             <RouterConfig />
           </BrowserRouter>
-        </ChakraProvider>
-      
-      </div>
+        </div>
+      </ChakraProvider>
     </AuthProvider>
   );
 }
