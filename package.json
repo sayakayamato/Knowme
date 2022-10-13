@@ -65,5 +65,9 @@
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "framer-motion": "^4"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/sayakayamato/Knowme.git",
+  "author": "rahydyn <kanaokasatoru@gmail.com>",
+  "license": "MIT"
 }
