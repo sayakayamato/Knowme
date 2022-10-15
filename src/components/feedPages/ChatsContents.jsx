@@ -25,7 +25,6 @@ export function ChatsContent({ feedId }) {
   console.log(queryKey);
   console.log(queryValue);
   const { data } = dataList(tableName, queryKey, queryValue);
-  
 
   useEffect(() => {
     if (user) {
@@ -60,17 +59,18 @@ export function ChatsContent({ feedId }) {
   return (
     <>
       <div className="chats_answer">
-        {data && Object.entries(data).map(([key, item]) => {
-          return (
-            <div
-              key={key}
-              className={item.resUserId === loggedInUserId ? "right" : "left"}
-            >
-              <p className="chat_send_user">{item.resUsername}</p>
-              <p className="chat_send_text">{item.content}</p>
-            </div>
-          );
-        })}
+        {data &&
+          Object.entries(data).map(([key, item]) => {
+            return (
+              <div
+                key={key}
+                className={item.resUserId === loggedInUserId ? "right" : "left"}
+              >
+                <p className="chat_send_user">{item.resUsername}</p>
+                <p className="chat_send_text">{item.content}</p>
+              </div>
+            );
+          })}
       </div>
       <div className="send_feeld">
         <div className="send_form">

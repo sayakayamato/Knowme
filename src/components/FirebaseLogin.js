@@ -3,6 +3,9 @@ import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import { Navigate, useLocation } from "react-router-dom";
 import { uiConfig, auth } from "../lib/firebase";
 
+import { ref, set, onValue } from "firebase/database";
+import { db } from "../lib/firebase";
+
 function FirebaseLogin() {
   const [isSignedIn, setIsSignedIn] = useState(false); // Local signed-in state.
 
@@ -11,7 +14,22 @@ function FirebaseLogin() {
   const isOnLoginPage = location.pathname === "/login";
 
   useEffect(() => {
-    const unregisterAuthObserver = auth.onAuthStateChanged((user) => {
+    const unregisterAuthObserver = auth.onAuthStateChanged(async (user) => {
+      if (!user) {
+        console.log("You have to sign in");
+      } else {
+        const pathRef = ref(db, "users/" + user.uid);
+        const userDoc = await onValue(pathRef, () => {});
+        console.log(userDoc);
+        if (!userDoc.exists) {
+          await set(pathRef, {
+            userId: user.uid,
+            displayName: user.displayName,
+            userPhoto: user.photoURL,
+            // created_at: firebaes.firebase.FieldValue.serverTimestamp(),
+          });
+        }
+      }
       setIsSignedIn(!!user);
     });
     return () => unregisterAuthObserver(); // Make sure we un-register Firebase observers when the component unmounts.
@@ -24,7 +42,6 @@ function FirebaseLogin() {
   if (!isSignedIn) {
     return (
       <div>
-        <h1>My App</h1>
         <p>Please sign-in:</p>
         <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={auth} />
       </div>
@@ -32,7 +49,6 @@ function FirebaseLogin() {
   }
   return (
     <div>
-      <h1>My App</h1>
       <p>Welcome {auth.currentUser.displayName}! You are now signed-in!</p>
       <div onClick={() => auth.signOut()}>Sign-out</div>
     </div>

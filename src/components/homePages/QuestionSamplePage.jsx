@@ -8,13 +8,10 @@ export const QuestionSamplePage = () => {
   //useLocationを使ってQuestionDetailContnetsからのstateを受け取る
   const categoryName = useLocation().state.categoryName;
   const categoryId = useLocation().state.categoryId;
-  console.log(categoryName)
-  console.log(categoryId)
+  console.log(categoryName);
+  console.log(categoryId);
 
   const { data } = useDataList("questionSamples", "categoryId", categoryId);
-
-  //テストデータ
-  //   const questions = ["私の長所はなんですか", "私の短所はなんですか"];
 
   return (
     <>

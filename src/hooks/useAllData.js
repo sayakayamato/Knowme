@@ -1,8 +1,4 @@
-import {
-  ref,
-  onValue,
-  child,
-} from "firebase/database";
+import { ref, onValue, child } from "firebase/database";
 import { db } from "../lib/firebase";
 
 export const useAllData = (tableName) => {
@@ -11,7 +7,7 @@ export const useAllData = (tableName) => {
 
   return onValue(tableRef, (snapshot) => {
     if (snapshot.exists()) {
-    //   console.log(snapshot.val());
+      //   console.log(snapshot.val());
       return snapshot.val();
     } else {
       // TODO: 例外処理

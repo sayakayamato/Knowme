@@ -11,7 +11,6 @@ import { MdOutlineArticle } from "react-icons/md";
 import { MdGroup } from "react-icons/md";
 import { useAuthContext } from "../../contexts/AuthContext";
 
-
 export function UnderTabBar() {
   const { user } = useAuthContext();
 
@@ -30,12 +29,11 @@ export function UnderTabBar() {
             <Link to="/myprofile">
               <Wrap className="top_profile_icon">
                 <WrapItem>
-                <Avatar name="Dan Abrahmov" src="https://bit.ly/dan-abramov"/>
+                  <Avatar name={user.displayName} src={user.photoURL} />
                 </WrapItem>
               </Wrap>
             </Link>
           </Flex>
-
         </div>
         <Tabs
           variant="soft-rounded"

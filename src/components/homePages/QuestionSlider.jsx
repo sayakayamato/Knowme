@@ -26,29 +26,7 @@ export function QuestionSlider() {
       state: { categoryName: categoryName, categoryId: categoryId },
     });
   };
-
-  // [Added]22/09/27: Realtime Databaseを導入
-
-  // const questioncategory = [
-  //   "おすすめ質問",
-  //   "就活",
-  //   "恋愛",
-  //   "遊び",
-  //   "カテゴリ5",
-  //   "カテゴリ6",
-  //   "カテゴリ7",
-  // ];
   const { data } = useFirebase("questionCategory");
-
-  //9月22日(木)ベタガキをループにした
-  // const categorylist = [];
-  // for (let i = 0; i < questioncategory.length; i++) {
-  //   categorylist.push(
-  //     <SwiperSlide key={categorylist}>
-  //       <button onClick={WhatCategory}>{questioncategory[i]}</button>
-  //     </SwiperSlide>
-  //   );
-  // }
 
   return (
     <>
