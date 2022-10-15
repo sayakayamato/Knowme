@@ -6,8 +6,10 @@ import { ProfileTabContents } from "./ProfiileTabContents";
 import { ProfileIcon } from "./ProfileIcon";
 import { Flex, Spacer, Box } from "@chakra-ui/react";
 import { SettingsIcon, ChevronLeftIcon } from "@chakra-ui/icons";
+import { useAuthContext } from "../../contexts/AuthContext";
 
 export function MyProfilePage() {
+  const { user } = useAuthContext();
   return (
     <>
       <div className="profilepage_top">
@@ -30,7 +32,7 @@ export function MyProfilePage() {
         <div className="profile_icon">
           <ProfileIcon />
         </div>
-        <div className="profile_name">sayaka yamato</div>
+        <div className="profile_name">{user.displayName}</div>
       </div>
       <Tabs>
         <TabList className="profile_tablist">

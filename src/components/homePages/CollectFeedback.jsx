@@ -27,8 +27,6 @@ import { useAuthContext } from "../../contexts/AuthContext";
 export function CollectFeedback() {
   //useLocationを使ってQuestionDetailContnetsからのstateを受け取る
   const state = useLocation().state;
-  // console.log(state);
-
   let [value, setValue] = useState("");
 
   useEffect(() => {
@@ -41,14 +39,10 @@ export function CollectFeedback() {
   };
 
   const { user } = useAuthContext();
-  // TODO:
-  //テストログインID⇨テストでは切り替えてください
   const logedInUserId = user.uid;
   const logedInUsername = user.displayName;
 
   const dataCreate = useDataCreate;
-
-
 
   const registerNewQuestion = () => {
     const tableName = "questions";
@@ -58,7 +52,7 @@ export function CollectFeedback() {
       content: value,
       createdAt: new Date().toISOString(),
     };
-    
+
     dataCreate(tableName, struct)
       .then((value) => {
         setFeedUrl("https://knowme.vercel.app/chats/" + String(value));

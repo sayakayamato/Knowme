@@ -11,6 +11,7 @@ import { LikeCard } from "./components/profileCards/LikeCard";
 import { ValueCard } from "./components/profileCards/Valuecard";
 import { ActivityCard } from "./components/profileCards/ActivityCard";
 import FirebaseLogin from "./components/FirebaseLogin";
+import { AddFriendProcess } from "./components/friendPages/AddFriendProcess";
 
 // import { ChatsContents } from "./ChatsContents";
 
@@ -20,6 +21,8 @@ export const RouterConfig = () => {
       <Routes>
         <Route path="/" element={<UnderTabBar />} />
         <Route path="/login" element={<FirebaseLogin />} />
+        <Route path="/friend" element={<AddFriendProcess />} />
+        {/* <Route path="/friend/:friendId" element={<AddFriendProcess />} /> */}
         <Route path="/myprofile" element={<MyProfilePage />} />
         <Route path="/questionsamples" element={<QuestionSamplePage />} />
         <Route path="/collectfeedback" element={<CollectFeedback />} />

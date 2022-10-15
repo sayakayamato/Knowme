@@ -51,14 +51,15 @@ export function FeedbackContents() {
         Object.entries(data).map(([key, item]) => {
           //   console.log(key, item.userId);
           return (
-            <Box className="feed_box"
-            bg={"rgba(255, 255, 255, 0.7)"}
-            w="100%"
-            p={4}
-            color="black"
-            mb={5}
-            key={key}>
-
+            <Box
+              className="feed_box"
+              bg={"rgba(255, 255, 255, 0.7)"}
+              w="100%"
+              p={4}
+              color="black"
+              mb={5}
+              key={key}
+            >
               <p className="feed_user_name">{item.username}</p>
               <p className="feed_contents_text" onClick={WhatFeed} id={key}>
                 {item.content}
