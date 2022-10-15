@@ -17,8 +17,7 @@ import { Link } from "react-router-dom";
 export function NewFriendModal() {
   const { user } = useAuthContext();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const BASE_URL = "http://localhost:3000";
-  const qrCodeUrl = BASE_URL + "/friend/" + user.uid;
+  const qrCodeUrl = process.env.REACT_APP_BASE_URL + "/friend/" + user.uid;
   return (
     <>
       <Button onClick={onOpen} color={"black"}>
