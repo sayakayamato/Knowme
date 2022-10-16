@@ -22,7 +22,6 @@ body {
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  background: pink;
 
   /* Center slide text vertically */
   display: -webkit-box;
@@ -37,14 +36,19 @@ body {
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
+  border-radius: 20px;
+
+  background-color: rgba(255, 255, 255, 0.1); /* 背景色 */
+  border: 1px solid rgba(255, 255, 255, 0.4); /* ボーダー */
+  border-right-color: rgba(255, 255, 255, 0.2);
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  -webkit-backdrop-filter: blur(20px); /* ぼかしエフェクト */
+  backdrop-filter: blur(20px);
+  box-shadow: 0 5px 20px rgba(255, 152, 79, 0.5); /* 薄い影 */
 }
 
-/* .swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-} */
+
 
 .mySwiper{
   height: 100px;
@@ -57,6 +61,8 @@ body {
   background: gray;
   height: 150px;
   border-radius: 20px;
+  background: rgb(239,137,202);
+  background: linear-gradient(41deg, rgba(239,137,202,0.5620842086834734) 0%, rgba(236,154,21,0.5536808473389356) 100%);
 }
 
 .collect_my_answer{
@@ -64,4 +70,6 @@ body {
   background: gray;
   height: 150px;
   border-radius: 20px;
+  background: rgb(137,220,239);
+  background: linear-gradient(41deg, rgba(137,220,239,0.5620842086834734) 0%, rgba(123,21,236,0.5536808473389356) 100%);
 }
