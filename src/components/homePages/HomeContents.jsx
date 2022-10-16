@@ -2,23 +2,25 @@ import "../../css/Home.css";
 import "../../css/App.css";
 import "swiper/css/navigation";
 import { QuestionSlider } from "./QuestionSlider";
+import { CollectMyAnswer } from "./CollectMyAnswer";
+import { FeedContents } from "../feedPages/FeedContents";
 
 export function HomeContents() {
   return (
     <>
-      <div className="home_greed">
-        <div className="home_greed_bold">
-          {/* <p>Welcome!</p>
-          <p>Please hear myself!</p> */}
-        </div>
-        <div className="home_greed_regular">
-          <p>カテゴリを選んで</p>
-          <p>友達に質問してみよう！</p>
-        </div>
-      </div>
-      <div className="home_contents">
+      <div className="collect_feedback_category">
+        <div className="collect_feedback_category_p"><p>フィードバックを集める</p></div>
         <QuestionSlider />
       </div>
+      <div className="collect_my_answer">
+        <div className="collect_my_answer_p"><p>質問に答える</p></div>
+        <CollectMyAnswer />
+      </div>
+
+      <div className="feed_contents">
+      <FeedContents />
+      </div>
     </>
+
   );
 }
