@@ -2,16 +2,11 @@
 // スライダーの作成、微調整が必要と思うが...
 
 import { useNavigate } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper React components
-// import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "../../css/Slider.css";
-
-// import required modules
 // import { Pagination } from "swiper";
 
 import { useFirebase } from "../../hooks/useFirebase";
@@ -30,23 +25,25 @@ export function QuestionSlider() {
 
   return (
     <>
-      <div
-        // slidesPerView={3}
-        // spaceBetween={10}
-        // pagination={{
-        //   clickable: true,
-        // }}
+      <Swiper
+        slidesPerView={3}
+        spaceBetween={30}
+        pagination={{
+          clickable: true,
+        }}
         // modules={[Pagination]}
-        className="category_wrap"
+        className="mySwiper"
       >
         {Object.entries(data).map(([key, item]) => (
-          <div key={key} className="category_box">
+          <SwiperSlide
+            key={key} className="category_box">
             <button onClick={WhatCategory} id={key}>
               <div className="category_name">{String(item.content)}</div>
             </button>
-          </div>
+          </SwiperSlide>
         ))}
-      </div>
+      </Swiper>
     </>
   );
 }
+
