@@ -76,16 +76,11 @@ export function CollectFeedback() {
   return (
     <>
       <div className="collect_feedback_top">
-        <Flex>
-          {/* <Box p="4" bg="" className="return_button"> */}
-          <Link to="/">
-            <ChevronLeftIcon boxSize={6} className="return_button" />
-          </Link>
-          {/* </Box> */}
+        
           <Text fontSize="xl" className="collect_feedback_title">
             質問を投稿する
           </Text>
-        </Flex>
+        
       </div>
       <div className="collect_feedback_textarea">
         <Textarea

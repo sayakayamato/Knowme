@@ -4,6 +4,7 @@
     margin: 0 auto;
     overflow:  scroll;
     background: #F4F4F4;
+    color: #704116;
 }
 
 
@@ -68,17 +69,20 @@
 .collect_feedback_title{
     text-align: center;
     margin: 0 auto;
-    margin-left: 10%;
+    /* margin-left: 10%; */
     margin-top: 20px;
 }
 .collect_feedback{
-    color: black;
+    color: #704116;
 }
 
 .collect_feedback_textarea{
     margin: 0 auto;
     width: 80vw;
     margin-top: 20%;
+    border-color: #704116;
+    background: #E8E8E8;
+    
 }
 
 .collect_feedback_button_div{
