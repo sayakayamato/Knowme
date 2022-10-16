@@ -1,5 +1,4 @@
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
-import { FeedContents } from "../feedPages/FeedContents";
 import { FriendsContents } from "../friendPages/FriendsContents";
 import { HomeContents } from "../homePages/HomeContents";
 import { NewFriendModal } from "../friendPages/NewFriendModal";
@@ -11,6 +10,8 @@ import { MdOutlineArticle } from "react-icons/md";
 import { MdGroup } from "react-icons/md";
 import { useAuthContext } from "../../contexts/AuthContext";
 import Remew from "./ReMew_logo.jpg"
+import { CollectFeedback } from "../homePages/CollectFeedback";
+import { MyProfilePage } from "../myPages/MyprofilePage";
 
 export function UnderTabBar() {
   const { user } = useAuthContext();
@@ -48,7 +49,10 @@ export function UnderTabBar() {
               <HomeContents />
             </TabPanel>
             <TabPanel>
-              <FeedContents />
+              <CollectFeedback />
+            </TabPanel>
+            <TabPanel>
+              <MyProfilePage />
             </TabPanel>
             <TabPanel>
               <p className="friend">Friend</p>
@@ -63,7 +67,11 @@ export function UnderTabBar() {
             </Tab>
             <Tab color={"#704116"}>
               <MdOutlineArticle />
-              Feed
+              投稿
+            </Tab>
+            <Tab color={"#704116"}>
+              
+              Myプロフ
             </Tab>
             <Tab color={"#704116"}>
               <MdGroup />
