@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Box } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { useMultiDataList } from "../../hooks/useMultiDataList";
@@ -15,6 +16,9 @@ export const FeedComponent = ({ friendList }) => {
     queryKey,
     queryValueList
   );
+  useEffect(()=>{
+    
+  },[feedContents])
   //クリックされた質問判定
   const WhatFeed = (e) => {
     //配列のキーとidが一致してるときにできる処理...

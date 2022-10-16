@@ -11,9 +11,6 @@ export function FriendsContents() {
     <ul style={{ listStyle: "none" }}>
       {data &&
         Object.entries(data).map(([key, item]) => {
-          console.log(item.userName);
-          console.log(item.userPhoto);
-          console.log(item);
           return (
             <li key={key}>
               <FriendsComponent

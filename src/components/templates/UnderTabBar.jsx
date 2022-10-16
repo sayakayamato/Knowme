@@ -1,4 +1,4 @@
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
+import { Tabs, TabList, TabPanels, Tab, TabPanel, Image } from "@chakra-ui/react";
 import { FeedContents } from "../feedPages/FeedContents";
 import { FriendsContents } from "../friendPages/FriendsContents";
 import { HomeContents } from "../homePages/HomeContents";
@@ -22,7 +22,7 @@ export function UnderTabBar() {
         <div className="top_bar">
           <Flex>
             <Link to="/" className="service_name">
-              Knowme!
+              ReMew!
             </Link>
             <Spacer />
 

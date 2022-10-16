@@ -10,6 +10,7 @@ export function FeedContents() {
   const [friendList, setFriendList] = useState([]);
   const { user } = useAuthContext();
   const { data } = useFirebase(`friends/${user.uid}`);
+  
 
   useEffect(() => {
     const userList = data
