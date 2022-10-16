@@ -59,7 +59,7 @@ body {
 .collect_feedback_category{
   margin: 20px;
   background: gray;
-  height: 150px;
+  height: 170px;
   border-radius: 20px;
   background: rgb(239,137,202);
   background: linear-gradient(41deg, rgba(239,137,202,0.5620842086834734) 0%, rgba(236,154,21,0.5536808473389356) 100%);
@@ -68,8 +68,16 @@ body {
 .collect_my_answer{
   margin: 20px;
   background: gray;
-  height: 150px;
+  height: 170px;
   border-radius: 20px;
   background: rgb(137,220,239);
   background: linear-gradient(41deg, rgba(137,220,239,0.5620842086834734) 0%, rgba(123,21,236,0.5536808473389356) 100%);
+}
+
+.collect_feedback_category_p{
+  padding: 16px
+}
+
+.collect_my_answer_p{
+  padding: 16px
 }

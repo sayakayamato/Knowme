@@ -9,11 +9,11 @@ export function HomeContents() {
   return (
     <>
       <div className="collect_feedback_category">
-        <p>フィードバックを集める</p>
+        <div className="collect_feedback_category_p"><p>フィードバックを集める</p></div>
         <QuestionSlider />
       </div>
       <div className="collect_my_answer">
-        <p>質問に答える</p>
+        <div className="collect_my_answer_p"><p>質問に答える</p></div>
         <CollectMyAnswer />
       </div>
 

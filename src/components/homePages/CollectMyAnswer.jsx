@@ -27,17 +27,17 @@ export function CollectMyAnswer() {
     <>
       <Swiper
         slidesPerView={3}
-        spaceBetween={30}
+        spaceBetween={15}
         pagination={{
           clickable: true,
         }}
         // modules={[Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
+        <SwiperSlide>基本</SwiperSlide>
+        <SwiperSlide>好きなもの</SwiperSlide>
+        <SwiperSlide>価値観</SwiperSlide>
+        <SwiperSlide>行動</SwiperSlide>
       </Swiper>
     </>
   );

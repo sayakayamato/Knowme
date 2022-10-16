@@ -7,7 +7,7 @@ import { ProfileIcon } from "./ProfileIcon";
 // import { Flex, Spacer, Box } from "@chakra-ui/react";
 // import { SettingsIcon, ChevronLeftIcon } from "@chakra-ui/icons";
 import { useAuthContext } from "../../contexts/AuthContext";
-import MyprofileImage from "./pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg";
+import MyprofileImage from "./magda-lukas-OZhYgZh0bAg-unsplash.jpg";
 
 export function MyProfilePage() {
   const { user } = useAuthContext();
