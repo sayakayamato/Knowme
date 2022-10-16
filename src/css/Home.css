@@ -1,7 +1,5 @@
 .service_name{
-    padding: 16px;
-    font-size: 20px;
-    color: white;
+    margin: 24px 16px;
 }
 
 .top_profile_icon{
@@ -9,8 +7,7 @@
 }
 
 .top_bar{
-    /* background: rgb(254,104,69);
-    background: linear-gradient(41deg, rgba(254,104,69,1) 0%, rgba(255,160,70,1) 100%); */
+    background: white;
 }
 
 .home_contents{
