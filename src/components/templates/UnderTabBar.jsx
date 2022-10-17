@@ -1,5 +1,6 @@
 import { Tabs, TabList, TabPanels, Tab, TabPanel, Image } from "@chakra-ui/react";
 import { FeedContents } from "../feedPages/FeedContents";
+
 import { FriendsContents } from "../friendPages/FriendsContents";
 import { HomeContents } from "../homePages/HomeContents";
 import { NewFriendModal } from "../friendPages/NewFriendModal";
@@ -10,6 +11,9 @@ import { MdHome } from "react-icons/md";
 import { MdOutlineArticle } from "react-icons/md";
 import { MdGroup } from "react-icons/md";
 import { useAuthContext } from "../../contexts/AuthContext";
+import Remew from "./ReMew_logo.jpg"
+import { CollectFeedback } from "../homePages/CollectFeedback";
+import { MyProfilePage } from "../myPages/MyprofilePage";
 
 export function UnderTabBar() {
   const { user } = useAuthContext();
@@ -21,8 +25,10 @@ export function UnderTabBar() {
       <>
         <div className="top_bar">
           <Flex>
-            <Link to="/" className="service_name">
-              ReMew!
+
+            <Link to="/">
+              <img src={Remew} alt="" width={"90px"} className="service_name"/>
+
             </Link>
             <Spacer />
 
@@ -37,17 +43,20 @@ export function UnderTabBar() {
         </div>
         <Tabs
           variant="soft-rounded"
-          colorScheme="whiteAlpha"
+          colorScheme="gray" 
           isFitted="true"
           className="under_tab_bar"
-          defaultIndex={1}
+          defaultIndex={0}
         >
           <TabPanels>
             <TabPanel p={0}>
               <HomeContents />
             </TabPanel>
             <TabPanel>
-              <FeedContents />
+              <CollectFeedback />
+            </TabPanel>
+            <TabPanel>
+              <MyProfilePage />
             </TabPanel>
             <TabPanel>
               <p className="friend">Friend</p>
@@ -56,15 +65,19 @@ export function UnderTabBar() {
             </TabPanel>
           </TabPanels>
           <TabList className="under_nav_bar">
-            <Tab color={"yellow.0"}>
+            <Tab color={"#704116"}>
               <MdHome />
               Home
             </Tab>
-            <Tab color={"yellow.50"}>
+            <Tab color={"#704116"}>
               <MdOutlineArticle />
-              Feed
+              投稿
             </Tab>
-            <Tab color={"yellow.50"}>
+            <Tab color={"#704116"}>
+              
+              Myプロフ
+            </Tab>
+            <Tab color={"#704116"}>
               <MdGroup />
               Friend
             </Tab>
