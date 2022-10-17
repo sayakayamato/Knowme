@@ -1,4 +1,6 @@
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
+import { Tabs, TabList, TabPanels, Tab, TabPanel, Image } from "@chakra-ui/react";
+import { FeedContents } from "../feedPages/FeedContents";
+
 import { FriendsContents } from "../friendPages/FriendsContents";
 import { HomeContents } from "../homePages/HomeContents";
 import { NewFriendModal } from "../friendPages/NewFriendModal";
@@ -23,8 +25,10 @@ export function UnderTabBar() {
       <>
         <div className="top_bar">
           <Flex>
+
             <Link to="/">
               <img src={Remew} alt="" width={"90px"} className="service_name"/>
+
             </Link>
             <Spacer />
 
