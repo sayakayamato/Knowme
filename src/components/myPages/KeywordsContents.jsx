@@ -1,4 +1,3 @@
-import React from "react";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
 import { ObjectiveContents } from "./ObjectiveContents";
 import { SubjectiveContents } from "./SubjectiveContents";

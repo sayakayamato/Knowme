@@ -1,4 +1,11 @@
-import { Tabs, TabList, TabPanels, Tab, TabPanel, Image } from "@chakra-ui/react";
+import {
+  Tabs,
+  TabList,
+  TabPanels,
+  Tab,
+  TabPanel,
+  Image,
+} from "@chakra-ui/react";
 import { FeedContents } from "../feedPages/FeedContents";
 
 import { FriendsContents } from "../friendPages/FriendsContents";
@@ -11,12 +18,15 @@ import { MdHome } from "react-icons/md";
 import { MdOutlineArticle } from "react-icons/md";
 import { MdGroup } from "react-icons/md";
 import { useAuthContext } from "../../contexts/AuthContext";
-import Remew from "./ReMew_logo.jpg"
+import Remew from "./ReMew_logo.jpg";
 import { CollectFeedback } from "../homePages/CollectFeedback";
 import { MyProfilePage } from "../myPages/MyprofilePage";
+import { useState } from "react";
 
 export function UnderTabBar() {
   const { user } = useAuthContext();
+  const [tabIndex, setTabIndex] = useState(0);
+  // TODO: タブの状態管理（別routeから戻ったときに反映されるようにuseContextを使用する）
 
   if (!user) {
     return <Navigate replace to="/login" />;
@@ -25,14 +35,22 @@ export function UnderTabBar() {
       <>
         <div className="top_bar">
           <Flex>
-
             <Link to="/">
-              <img src={Remew} alt="" width={"90px"} className="service_name"/>
-
+              <img src={Remew} alt="" width={"90px"} className="service_name" />
             </Link>
             <Spacer />
+            {/* TODO: リリース時はadminの制限が必要 */}
+            {process.env.REACT_APP_ADMIN_MODE &&
+              process.env.REACT_APP_ADMIN_MODE === "ON" && (
+                <>
+                  <Link to="/admin">
+                    <p style={{ margin: "auto", padding: "auto" }}>アドミン</p>
+                  </Link>
+                  <Spacer />
+                </>
+              )}
 
-            <Link to="/myprofile">
+            <Link to="/settings">
               <Wrap className="top_profile_icon">
                 <WrapItem>
                   <Avatar name={user.displayName} src={user.photoURL} />
@@ -43,10 +61,11 @@ export function UnderTabBar() {
         </div>
         <Tabs
           variant="soft-rounded"
-          colorScheme="gray" 
+          colorScheme="gray"
           isFitted="true"
           className="under_tab_bar"
-          defaultIndex={0}
+          // defaultIndex={0}
+          onChange={(index) => setTabIndex(index)}
         >
           <TabPanels>
             <TabPanel p={0}>
@@ -73,10 +92,7 @@ export function UnderTabBar() {
               <MdOutlineArticle />
               投稿
             </Tab>
-            <Tab color={"#704116"}>
-              
-              Myプロフ
-            </Tab>
+            <Tab color={"#704116"}>Myプロフ</Tab>
             <Tab color={"#704116"}>
               <MdGroup />
               Friend

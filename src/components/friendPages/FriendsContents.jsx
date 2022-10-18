@@ -1,4 +1,3 @@
-import React from "react";
 import { FriendsComponent } from "./FriendsComponent";
 import { useAuthContext } from "../../contexts/AuthContext";
 import { useFirebase } from "../../hooks/useFirebase";

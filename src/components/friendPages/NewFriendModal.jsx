@@ -1,4 +1,3 @@
-
 import {
   Modal,
   ModalOverlay,
@@ -55,7 +54,11 @@ export function NewFriendModal() {
                     viewBox={`0 0 256 256`}
                   />
                 </div>
-                <Link to={`/friend?userId=${user.uid}&userName=${user.displayName}`}>リンク</Link>
+                <Link
+                  to={`/friend?userId=${user.uid}&userName=${user.displayName}`}
+                >
+                  リンク
+                </Link>
               </div>
             </div>
           </ModalBody>

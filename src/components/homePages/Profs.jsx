@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import { ChatContents } from "./ChatContents";
+import { ProfContents } from "./ProfContents";
 import { useLocation } from "react-router-dom";
 import { ChevronLeftIcon } from "@chakra-ui/icons";
 // import { useParams } from "react-router-dom";
@@ -8,23 +8,23 @@ import "../../css/Chats.css";
 import { useDataRead } from "../../hooks/useDataRead";
 import { useEffect, useState } from "react";
 
-export function Chats() {
+export function Profs() {
   //useLocationを使ってFeedContentsから値を受け取る
   const location = useLocation();
   const dataRead = useDataRead;
   const params = useParams();
 
-  const [questiontext, setQuestiontext] = useState("Loading...");
-  const feedId = params.feedID;
+  const [profText, setProfText] = useState("Loading...");
+  const profId = params.profId;
 
   useEffect(() => {
     if (!location.state) {
-      dataRead("questions", params.feedID).then((res) => {
+      dataRead("questions", profId).then((res) => {
         console.log(res);
-        setQuestiontext(res.content);
+        setProfText(res.content);
       });
     } else {
-      setQuestiontext(location.state.whatfeedtext);
+      setProfText(location.state.profText);
     }
   }, []);
   return (
@@ -36,12 +36,12 @@ export function Chats() {
           </Link>
         </div>
         <div className="chats_title">
-          <p className="chat_title_text">フィードバックを送信する</p>
+          <p className="chat_title_text">プロフに回答する</p>
         </div>
       </div>
 
-      <div className="chats_question">{questiontext}</div>
-      <ChatContents feedId={feedId} />
+      <div className="chats_question">{profText}</div>
+      <ProfContents profId={profId} />
     </>
   );
 }

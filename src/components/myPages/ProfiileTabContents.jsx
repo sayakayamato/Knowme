@@ -1,4 +1,3 @@
-import React from "react";
 // import { BasicCard } from './BasicCard';
 import { ProfileTabHome } from "./ProfileTabHome";
 

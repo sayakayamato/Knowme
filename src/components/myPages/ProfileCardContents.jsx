@@ -1,4 +1,3 @@
-import React from "react";
 // import { Wrap, WrapItem, Center } from "@chakra-ui/react";
 import { Flex, Spacer, Box } from "@chakra-ui/react";
 
