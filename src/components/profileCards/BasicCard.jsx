@@ -13,13 +13,13 @@ export function BasicCard() {
       <div className="profilepage_top">
         <Flex>
           <Box p="4" bg="" className="return_button">
-            <Link to="/myprofile">
+            <Link to="/">
               <ChevronLeftIcon boxSize={6} />
             </Link>
           </Box>
           <Spacer />
           <Box p="4" bg="" className="profile_setting">
-            <Link to="/SettingPage">
+            <Link to="/settings">
               <SettingsIcon boxSize={6} />
             </Link>
           </Box>

@@ -38,7 +38,6 @@ export function MyProfilePage() {
           </Box>
         </Flex>
       </div> */}
-      　
 
         <div className="profile_info">
           <div className="profile_icon">

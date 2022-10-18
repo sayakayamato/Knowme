@@ -1,6 +1,3 @@
-// 9月21日（水）
-// スライダーの作成、微調整が必要と思うが...
-
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -11,16 +8,16 @@ import "../../css/Slider.css";
 
 import { useFirebase } from "../../hooks/useFirebase";
 
-export function QuestionSlider() {
+export const ProfSlider = () => {
   const navigate = useNavigate();
   const WhatCategory = (e) => {
     const categoryName = e.target.innerText;
     const categoryId = e.target.id;
-    navigate("/questionsamples", {
+    navigate("/profsamples", {
       state: { categoryName: categoryName, categoryId: categoryId },
     });
   };
-  const { data } = useFirebase("questionCategory");
+  const { data } = useFirebase("profCategory");
 
   return (
     <>
@@ -45,4 +42,4 @@ export function QuestionSlider() {
       </Swiper>
     </>
   );
-}
+};

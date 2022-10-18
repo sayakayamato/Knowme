@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Input } from "@chakra-ui/react";
 
 import { useDataList } from "../../hooks/useDataList";
@@ -7,7 +7,7 @@ import { useDataCreate } from "../../hooks/useDataCreate";
 import "../../css/Chats.css";
 import { useAuthContext } from "../../contexts/AuthContext";
 
-export function ChatsContent({ feedId }) {
+export function ChatContents({ feedId }) {
   //inputに入力したチャットテキスト
   const [inputChatText, setInputChatText] = useState("");
   // const dataList = useDataList;

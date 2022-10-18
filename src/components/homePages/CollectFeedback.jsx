@@ -1,4 +1,3 @@
-import React from "react";
 import { useLocation } from "react-router-dom";
 import { Textarea, Flex } from "@chakra-ui/react";
 import { useState, useEffect } from "react";

@@ -1,4 +1,3 @@
-import React from "react";
 import { Avatar, Wrap, WrapItem } from "@chakra-ui/react";
 import "../../css/ProfileInfo.css";
 import { useAuthContext } from "../../contexts/AuthContext";
