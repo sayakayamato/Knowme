@@ -6,7 +6,7 @@ import {
   TabPanel,
   Image,
 } from "@chakra-ui/react";
-import { FeedContents } from "../feedPages/FeedContents";
+// import { FeedContents } from "../feedPages/FeedContents";
 
 import { FriendsContents } from "../friendPages/FriendsContents";
 import { HomeContents } from "../homePages/HomeContents";
@@ -18,14 +18,14 @@ import { MdHome } from "react-icons/md";
 import { MdOutlineArticle } from "react-icons/md";
 import { MdGroup } from "react-icons/md";
 import { useAuthContext } from "../../contexts/AuthContext";
-import Remew from "./ReMew_logo.jpg";
 import { CollectFeedback } from "../homePages/CollectFeedback";
 import { MyProfilePage } from "../myPages/MyprofilePage";
-import { useState } from "react";
+import { useTabContext } from "../../contexts/TabContext";
 
 export function UnderTabBar() {
   const { user } = useAuthContext();
-  const [tabIndex, setTabIndex] = useState(0);
+  const { tab, setTab } = useTabContext();
+  // const [tabIndex, setTabIndex] = useState(0);
   // TODO: タブの状態管理（別routeから戻ったときに反映されるようにuseContextを使用する）
 
   if (!user) {
@@ -36,7 +36,12 @@ export function UnderTabBar() {
         <div className="top_bar">
           <Flex>
             <Link to="/">
-              <img src={Remew} alt="" width={"90px"} className="service_name" />
+              <img
+                src="ReMew_logo.jpg"
+                alt=""
+                width={"90px"}
+                className="service_name"
+              />
             </Link>
             <Spacer />
             {/* TODO: リリース時はadminの制限が必要 */}
@@ -65,10 +70,11 @@ export function UnderTabBar() {
           isFitted="true"
           className="under_tab_bar"
           // defaultIndex={0}
-          onChange={(index) => setTabIndex(index)}
+          onChange={(index) => setTab(index)}
+          defaultIndex={tab}
         >
           <TabPanels>
-            <TabPanel p={0}>
+            <TabPanel>
               <HomeContents />
             </TabPanel>
             <TabPanel>

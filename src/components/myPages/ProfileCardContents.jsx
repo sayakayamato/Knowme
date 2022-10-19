@@ -3,11 +3,11 @@ import { Flex, Spacer, Box } from "@chakra-ui/react";
 
 import "../../css/Proflie_Card.css";
 
-export function ProfileCardContents() {
+export function ProfileCardContents({ profTitle }) {
   return (
     <>
       <div className="card_wrap">
-        <div className="card_title">Basic</div>
+        <div className="card_title">{profTitle}</div>
         <div className="card_input_wrap">
           <Flex>
             <Box p="4" w="49%" bg="white" mt="1%" className="card_input">

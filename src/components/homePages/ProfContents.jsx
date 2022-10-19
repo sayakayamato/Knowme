@@ -7,28 +7,43 @@ import { useDataCreate } from "../../hooks/useDataCreate";
 import "../../css/Chats.css";
 import { useAuthContext } from "../../contexts/AuthContext";
 
-export function ProfContents({ profId }) {
+export function ProfContents({ profId, friendsList }) {
   //inputに入力したチャットテキスト
   const [inputChatText, setInputChatText] = useState("");
-  // const dataList = useDataList;
   const dataCreate = useDataCreate;
   const tableName = "profs";
-  const queryKey = "profId";
-  const queryValue = profId;
   const { user } = useAuthContext();
 
   const dataList = useDataList;
-  const { data } = dataList(tableName, queryKey, queryValue);
 
-  //送信ボタンを押したときの処理
+  const tmpArr = [];
+  console.log("friendsList at ProfContents.jsx");
+  console.log(friendsList);
+
+  for (let i = 0; i < friendsList.length; i++) {
+    console.log(friendsList[i]);
+    const queryKey = "combProfUserId";
+    const queryValue = profId + friendsList[i].item.userId;
+    const { data: response } = dataList(tableName, queryKey, queryValue);
+    response && tmpArr.push(response);
+  }
+  console.log(tmpArr);
+  if (tmpArr) {
+    tmpArr.map((data) => {
+      console.log("data");
+      console.log(data);
+    });
+  }
+
   const onClickSend = () => {
-    if (inputChatText === "") return; //空文字で送信ボタンを押したときに処理が走らないようにする
+    if (inputChatText === "") return;
     // データ保存処理
     const newChatObject = {
       content: inputChatText,
       profId: profId,
       resUserId: user.uid,
       resUsername: user.displayName,
+      combProfUserId: profId + user.uid,
       createdAt: new Date().toISOString(),
     };
     const tableName = "profs";
@@ -39,17 +54,19 @@ export function ProfContents({ profId }) {
   return (
     <>
       <div className="chats_answer">
-        {data &&
-          Object.entries(data).map(([key, item]) => {
-            return (
-              <div
-                key={key}
-                className={item.resUserId === user.uid ? "right" : "left"}
-              >
-                <p className="chat_send_user">{item.resUsername}</p>
-                <p className="chat_send_text">{item.content}</p>
-              </div>
-            );
+        {tmpArr &&
+          tmpArr.map((data) => {
+            return Object.entries(data).map(([key, item]) => {
+              return (
+                <div
+                  key={key}
+                  className={item.resUserId === user.uid ? "right" : "left"}
+                >
+                  <p className="chat_send_user">{item.resUsername}</p>
+                  <p className="chat_send_text">{item.content}</p>
+                </div>
+              );
+            });
           })}
       </div>
       <div className="send_feeld">
