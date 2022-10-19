@@ -6,10 +6,10 @@ import { ProfSamplePage } from "./components/homePages/ProfSamplePage";
 import { UnderTabBar } from "./components/templates/UnderTabBar";
 import { FeedContents } from "./components/feedPages/FeedContents";
 import { SettingPage } from "./components/myPages/SettingPage";
-import { BasicCard } from "./components/profileCards/BasicCard";
-import { LikeCard } from "./components/profileCards/LikeCard";
-import { ValueCard } from "./components/profileCards/Valuecard";
-import { ActivityCard } from "./components/profileCards/ActivityCard";
+// import { BasicCard } from "./components/profileCards/BasicCard";
+// import { LikeCard } from "./components/profileCards/LikeCard";
+// import { ValueCard } from "./components/profileCards/Valuecard";
+// import { ActivityCard } from "./components/profileCards/ActivityCard";
 import FirebaseLogin from "./components/FirebaseLogin";
 import { AddFriendProcess } from "./components/friendPages/AddFriendProcess";
 import { AdminPage } from "./components/adminPages/AdminPage";
@@ -35,10 +35,10 @@ export const RouterConfig = () => {
         <Route path="/chats/:feedID" element={<Chats />} />
         <Route path="/profs/:profId" element={<Profs />} />
         <Route path="/settings" element={<SettingPage />} />
-        <Route path="/BasicCard" element={<BasicCard />} />
+        {/* <Route path="/BasicCard" element={<BasicCard />} />
         <Route path="/LikeCard" element={<LikeCard />} />
         <Route path="/ValueCard" element={<ValueCard />} />
-        <Route path="/ActivityCard" element={<ActivityCard />} />
+        <Route path="/ActivityCard" element={<ActivityCard />} /> */}
         {/* <Route path="/FeedContents" element={<FeedContents />} /> */}
         {process.env.REACT_APP_ADMIN_MODE === "ON" && (
           <Route path="/admin" element={<AdminPage />} />

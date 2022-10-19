@@ -20,7 +20,6 @@ function FirebaseLogin() {
       } else {
         const pathRef = ref(db, "users/" + user.uid);
         const userDoc = await onValue(pathRef, () => {});
-        console.log(userDoc);
         if (!userDoc.exists) {
           await set(pathRef, {
             userId: user.uid,

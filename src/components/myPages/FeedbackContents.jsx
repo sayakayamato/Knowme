@@ -28,16 +28,13 @@ export function FeedbackContents() {
       // return queryValue;
     })
     .filter((e) => typeof e !== "undefined");
-  //   console.log(feedContents);
 
   const navigate = useNavigate();
   const NewFeedContents = () => navigate("/CollectFeedback");
   //クリックされた質問判定
   const WhatFeed = (e) => {
-    console.log(e);
     //配列のキーとidが一致してるときにできる処理...
     const pushQuestionID = e.target.id;
-    console.log(pushQuestionID);
     const whatfeedtext = e.target.innerText; //記入した質問本文を定数に入れる
     navigate(`/Chats/${pushQuestionID}`, {
       state: { whatfeedtext: whatfeedtext, pushQuestionID: pushQuestionID },
@@ -49,7 +46,6 @@ export function FeedbackContents() {
       {" "}
       {feedContents.map((data) =>
         Object.entries(data).map(([key, item]) => {
-          //   console.log(key, item.userId);
           return (
             <Box
               className="feed_box"

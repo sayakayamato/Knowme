@@ -1,41 +1,42 @@
 // import { Wrap, WrapItem, Center } from "@chakra-ui/react";
-import { Flex, Spacer, Box } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
+import { useAuthContext } from "../../contexts/AuthContext";
+import { useDataList } from "../../hooks/useDataList";
 
 import "../../css/Proflie_Card.css";
 
-export function ProfileCardContents() {
+export function ProfileCardContents({ profTitle, categoryId }) {
+  const { user } = useAuthContext();
+  const dataList = useDataList;
+  const tableName = "profs";
+  const queryKey = "combCatgoryUserId";
+  const queryValue = categoryId + user.uid;
+  const { data } = dataList(tableName, queryKey, queryValue);
+
   return (
     <>
       <div className="card_wrap">
-        <div className="card_title">Basic</div>
+        <div className="card_title">{profTitle}</div>
         <div className="card_input_wrap">
-          <Flex>
-            <Box p="4" w="49%" bg="white" mt="1%" className="card_input">
-              Box 1
-            </Box>
-            <Spacer />
-            <Box p="4" w="49%" bg="white" mt="1%" className="card_input">
-              Box 2
-            </Box>
-          </Flex>
-          <Box p="4" bg="white" mt="1%" className="card_input">
-            Box 3
-          </Box>
-          <Box p="4" bg="white" mt="1%" className="card_input">
-            Box 4
-          </Box>
-          <Flex>
-            <Box p="4" w="49%" bg="white" mt="1%" className="card_input">
-              Box 5
-            </Box>
-            <Spacer />
-            <Box p="4" w="49%" bg="white" mt="1%" className="card_input">
-              Box 6
-            </Box>
-          </Flex>
-          <Box p="4" bg="white" mt="1%" className="card_input">
-            Box 7
-          </Box>
+          {data &&
+            Object.entries(data).map(([key, item]) => {
+              return (
+                <Box
+                  className="feed_box"
+                  bg={"rgba(255, 255, 255, 0.7)"}
+                  w="100%"
+                  p={4}
+                  color="black"
+                  mb={5}
+                  key={key}
+                >
+                  <p className="feed_user_name">{item.profContent}</p>
+                  <p className="feed_contents_text" id={key}>
+                    {item.content}
+                  </p>
+                </Box>
+              );
+            })}
         </div>
       </div>
     </>

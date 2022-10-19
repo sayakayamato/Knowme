@@ -15,18 +15,21 @@ export function Profs() {
   const params = useParams();
 
   const [profText, setProfText] = useState("Loading...");
+  const [profCategory, setProfCategory] = useState("Loading...");
   const profId = params.profId;
 
   useEffect(() => {
     if (!location.state) {
-      dataRead("questions", profId).then((res) => {
-        console.log(res);
+      dataRead("profSamples", profId).then((res) => {
         setProfText(res.content);
+        setProfCategory(res.categoryId);
       });
     } else {
       setProfText(location.state.profText);
+      setProfCategory(location.state.categoryId);
     }
   }, []);
+
   return (
     <>
       <div className="chats_header">
@@ -41,7 +44,11 @@ export function Profs() {
       </div>
 
       <div className="chats_question">{profText}</div>
-      <ProfContents profId={profId} />
+      <ProfContents
+        profId={profId}
+        profText={profText}
+        categoryId={profCategory}
+      />
     </>
   );
 }

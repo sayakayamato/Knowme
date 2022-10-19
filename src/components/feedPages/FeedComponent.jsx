@@ -1,24 +1,22 @@
-import { useEffect } from "react";
 import { Box } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { useMultiDataList } from "../../hooks/useMultiDataList";
+import { useAuthContext } from "../../contexts/AuthContext";
 
 export const FeedComponent = ({ friendList }) => {
   const navigate = useNavigate();
+  const { user } = useAuthContext();
 
   const multiDataList = useMultiDataList;
   const tableName = "questions";
   const queryKey = "userId";
 
-  const queryValueList = friendList;
+  const queryValueList = [user.uid, ...friendList];
   const { data: feedContents } = multiDataList(
     tableName,
     queryKey,
     queryValueList
   );
-  useEffect(()=>{
-    
-  },[feedContents])
   //クリックされた質問判定
   const WhatFeed = (e) => {
     //配列のキーとidが一致してるときにできる処理...

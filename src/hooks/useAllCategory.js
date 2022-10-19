@@ -14,12 +14,7 @@ export const useAllCategory = async (tableName) => {
       Object.keys(tmpData).forEach((key) => {
         categoryIds.push(key);
         categoryList.push(tmpData[key].content);
-        // console.log(key);
-        // console.log(tmpData[key].content);
       });
-
-      console.log(categoryIds);
-      console.log(categoryList);
 
       return { categoryIds, categoryList };
     } else {
