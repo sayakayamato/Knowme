@@ -3,20 +3,25 @@ import { useNavigate } from "react-router-dom";
 import { useMultiDataList } from "../../hooks/useMultiDataList";
 import { useAuthContext } from "../../contexts/AuthContext";
 
-export const FeedComponent = ({ friendList }) => {
+export const FeedComponent = ({ friendsId }) => {
   const navigate = useNavigate();
   const { user } = useAuthContext();
+  console.log(friendsId)
 
   const multiDataList = useMultiDataList;
   const tableName = "questions";
   const queryKey = "userId";
 
-  const queryValueList = [user.uid, ...friendList];
+  const friendsList = friendsId ? friendsId : []
+  const queryValueList = [user.uid, ...friendsList];
   const { data: feedContents } = multiDataList(
     tableName,
     queryKey,
     queryValueList
   );
+  console.log("queryValueList");
+  console.log(queryValueList.length);
+  console.log(queryValueList);
   //クリックされた質問判定
   const WhatFeed = (e) => {
     //配列のキーとidが一致してるときにできる処理...
@@ -26,6 +31,10 @@ export const FeedComponent = ({ friendList }) => {
       state: { whatfeedtext: whatfeedtext, pushQuestionID: pushQuestionID },
     }); //ページ遷移と共に値を持っていく
   };
+
+  console.log("feedContents");
+  console.log(feedContents);
+
   if (feedContents) {
     if (feedContents.length === 0) {
       return (
