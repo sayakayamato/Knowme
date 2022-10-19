@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
+import { getStorage } from "firebase/storage"
 // import * as firebaseui from "firebaseui";
 import "firebaseui/dist/firebaseui.css";
 import {
@@ -42,6 +43,7 @@ export const providerGoogle = new GoogleAuthProvider();
 export const providerTwitter = new TwitterAuthProvider();
 export const db = getDatabase(firebaseApp);
 export const auth = getAuth();
+export const storage = getStorage(firebaseApp)
 // export const ui = new firebaseui.auth.AuthUI(getAuth());
 
 // const useDatabase = () => {

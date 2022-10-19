@@ -16,6 +16,7 @@ export const useMultiDataList = (tableName, queryKey, queryValueList) => {
   useEffect(() => {
     const rootRef = ref(db);
     const tableRef = child(rootRef, tableName);
+    const dataArray = []
 
     for (let i = 0; i < queryValueList.length; i++) {
       // クエリ処理
@@ -26,10 +27,12 @@ export const useMultiDataList = (tableName, queryKey, queryValueList) => {
       );
       onValue(listRef, (snapshot) => {
         const newData = snapshot.val();
-        setData(newData ? [...data, newData] : data);
+        newData &&
+          dataArray.push(newData)
       });
     }
-  }, [queryValueList]);
+    setData(dataArray)
+  }, []);
 
   return { data };
 };
