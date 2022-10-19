@@ -8,6 +8,7 @@ import { RouterConfig } from "./RouterConfig";
 import { AuthProvider } from "./contexts/AuthContext";
 import { TabProvider } from "./contexts/TabContext";
 import { FriendsListProvider } from "./contexts/FriendsListContext";
+import { FriendsIdProvider } from "./contexts/FriendsIdContext";
 // import { TestFirebase } from "./test/TestFirebase";
 
 function App() {
@@ -16,11 +17,13 @@ function App() {
       <ChakraProvider>
         <div className="phone_size">
           <FriendsListProvider>
-            <TabProvider>
-              <BrowserRouter>
-                <RouterConfig />
-              </BrowserRouter>
-            </TabProvider>
+            <FriendsIdProvider>
+              <TabProvider>
+                <BrowserRouter>
+                  <RouterConfig />
+                </BrowserRouter>
+              </TabProvider>
+            </FriendsIdProvider>
           </FriendsListProvider>
         </div>
       </ChakraProvider>

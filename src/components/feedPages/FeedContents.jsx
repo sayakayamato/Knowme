@@ -3,14 +3,14 @@ import { useNavigate } from "react-router-dom";
 import { FeedComponent } from "./FeedComponent";
 import { useAuthContext } from "../../contexts/AuthContext";
 import { useFirebase } from "../../hooks/useFirebase";
+import { useFriendsIdContext } from "../../contexts/FriendsIdContext";
 
 export function FeedContents() {
   const navigate = useNavigate();
   const NewFeedContents = () => navigate("/CollectFeedback");
-  const [friendList, setFriendList] = useState([]);
+  const { friendsId, setFriendsId } = useFriendsIdContext();
   const { user } = useAuthContext();
   const { data } = useFirebase(`friends/${user.uid}`);
-  
 
   useEffect(() => {
     const userList = data
@@ -18,11 +18,12 @@ export function FeedContents() {
           return item.userId;
         })
       : "";
-    setFriendList([user.uid, ...userList]);
-  }, [user.uid, data]);
+    setFriendsId([...userList]);
+  }, [data]);
+
   return (
     <>
-      <FeedComponent friendList={friendList} />
+      <FeedComponent friendList={friendsId} />
       <button onClick={NewFeedContents} className="feed_add_button">
         +
       </button>

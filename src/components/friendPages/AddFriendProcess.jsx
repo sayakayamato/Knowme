@@ -10,12 +10,9 @@ export const AddFriendProcess = () => {
   const addFriend = useAddFriend;
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  console.log(searchParams);
   const friendId = searchParams.get("userId");
   const { data } = useFirebase(`users/${friendId}`);
-  console.log(friendId);
   const friendDisplayName = searchParams.get("userName");
-  console.log(friendDisplayName);
   const onClick = () => {
     addFriend(
       user.uid,

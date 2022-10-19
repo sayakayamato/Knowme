@@ -7,8 +7,20 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { ProfileCardContents } from "./ProfileCardContents";
+import { useFirebase } from "../../hooks/useFirebase";
 
 export function ProfileTabHome() {
+  const tableName = "profCategory";
+
+  const { data } = useFirebase(tableName);
+  const categoryList = data
+    ? Object.entries(data).map(([key, item]) => {
+        return {
+          categoryId: key,
+          content: item.content,
+        };
+      })
+    : [];
   return (
     <>
       <VStack
@@ -19,24 +31,26 @@ export function ProfileTabHome() {
       >
         <Tabs isFitted variant="enclosed">
           <TabList mb="1em">
-            <Tab>Basic</Tab>
-            <Tab>Like</Tab>
+            {categoryList &&
+              categoryList.map((category) => {
+                return <Tab key={category.categoryId}>{category.content}</Tab>;
+              })}
+            {/* <Tab>Like</Tab>
             <Tab>Values</Tab>
-            <Tab>Activity</Tab>
+            <Tab>Activity</Tab> */}
           </TabList>
           <TabPanels>
-            <TabPanel>
-              <ProfileCardContents profTitle="Basic" />
-            </TabPanel>
-            <TabPanel>
-              <ProfileCardContents profTitle="Like" />
-            </TabPanel>
-            <TabPanel>
-              <ProfileCardContents profTitle="Values" />
-            </TabPanel>
-            <TabPanel>
-              <ProfileCardContents profTitle="Activity" />
-            </TabPanel>
+            {categoryList &&
+              categoryList.map((category) => {
+                return (
+                  <TabPanel key={category.categoryId}>
+                    <ProfileCardContents
+                      profTitle={category.content}
+                      categoryId={category.categoryId}
+                    />
+                  </TabPanel>
+                );
+              })}
           </TabPanels>
         </Tabs>
       </VStack>

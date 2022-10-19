@@ -6,16 +6,6 @@ import { ref, child, onValue } from "firebase/database";
 import { db } from "../lib/firebase";
 
 export const CategoryList = () => {
-  // const navigate = useNavigate();
-  // const navigateToDetailPage = (e) => {
-  //   console.log(e.target.innerText);
-  //   const clickCategory = e.target.innerText;
-  //   navigate("/QuestionDetailPage", { state: clickCategory });
-  // };
-
-  //   const [categoryIds, setCategoryIds] = useState();
-  //   const [categoryList, setCategoryList] = useState();
-
   const tableName = "questionCategory";
   const rootRef = ref(db);
   const tableRef = child(rootRef, tableName);
@@ -31,13 +21,7 @@ export const CategoryList = () => {
           Object.keys(tmpData).forEach((key) => {
             categoryIds.push(key);
             categoryList.push(tmpData[key].content);
-            // console.log(key);
-            // console.log(tmpData[key].content);
           });
-
-          console.log(categoryIds);
-          console.log(categoryList);
-
           return categoryIds.map((id, index) => (
             <SwiperSlide key={`${id}${categoryList[index]}`}>
               <button

@@ -16,9 +16,6 @@ export const useDataList = (tableName, queryKey, queryValue) => {
   useEffect(() => {
     const rootRef = ref(db);
     const tableRef = child(rootRef, tableName);
-    console.log(queryKey);
-    console.log(queryValue);
-
     // クエリ処理
     const listRef = query(
       tableRef,
@@ -28,8 +25,6 @@ export const useDataList = (tableName, queryKey, queryValue) => {
 
     onValue(listRef, (snapshot) => {
       const newData = snapshot.val();
-      console.log("newData");
-      console.log(newData);
       // TODO: Need to Fix Bug
       // questionsのidと取得配列のid（配列内の番号）が一致する時.
       // オブジェクト型から配列型になってしまう（idの省略が行われる）

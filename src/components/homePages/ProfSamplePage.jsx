@@ -25,6 +25,7 @@ export const ProfSamplePage = () => {
                 <ProfSampleContents
                   question={String(item.content)}
                   profId={key}
+                  categoryId={categoryId}
                 />
               </li>
             ))}

@@ -7,7 +7,6 @@ export const useAllData = (tableName) => {
 
   return onValue(tableRef, (snapshot) => {
     if (snapshot.exists()) {
-      //   console.log(snapshot.val());
       return snapshot.val();
     } else {
       // TODO: 例外処理

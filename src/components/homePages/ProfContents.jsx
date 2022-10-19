@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Input } from "@chakra-ui/react";
 
 import { useDataList } from "../../hooks/useDataList";
@@ -6,9 +6,9 @@ import { useDataCreate } from "../../hooks/useDataCreate";
 
 import "../../css/Chats.css";
 import { useAuthContext } from "../../contexts/AuthContext";
+import { useFriendsIdContext } from "../../contexts/FriendsIdContext";
 
-export function ProfContents({ profId, friendsList }) {
-  //inputに入力したチャットテキスト
+export function ProfContents({ profId, profText, categoryId }) {
   const [inputChatText, setInputChatText] = useState("");
   const dataCreate = useDataCreate;
   const tableName = "profs";
@@ -16,23 +16,16 @@ export function ProfContents({ profId, friendsList }) {
 
   const dataList = useDataList;
 
-  const tmpArr = [];
-  console.log("friendsList at ProfContents.jsx");
-  console.log(friendsList);
+  const { friendsId } = useFriendsIdContext();
 
-  for (let i = 0; i < friendsList.length; i++) {
-    console.log(friendsList[i]);
+  const tmpArr = [];
+  const listId = [user.uid, ...friendsId]
+
+  for (let i = 0; i < listId.length; i++) {
     const queryKey = "combProfUserId";
-    const queryValue = profId + friendsList[i].item.userId;
+    const queryValue = profId + listId[i];
     const { data: response } = dataList(tableName, queryKey, queryValue);
     response && tmpArr.push(response);
-  }
-  console.log(tmpArr);
-  if (tmpArr) {
-    tmpArr.map((data) => {
-      console.log("data");
-      console.log(data);
-    });
   }
 
   const onClickSend = () => {
@@ -43,7 +36,10 @@ export function ProfContents({ profId, friendsList }) {
       profId: profId,
       resUserId: user.uid,
       resUsername: user.displayName,
+      categoryId: categoryId,
+      profContent: profText,
       combProfUserId: profId + user.uid,
+      combCatgoryUserId: categoryId + user.uid,
       createdAt: new Date().toISOString(),
     };
     const tableName = "profs";

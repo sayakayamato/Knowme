@@ -8,8 +8,6 @@ import "../../css/Chats.css";
 import { useDataRead } from "../../hooks/useDataRead";
 import { useEffect, useState } from "react";
 
-import { useFriendsListContext } from "../../contexts/FriendsListContext";
-
 export function Profs() {
   //useLocationを使ってFeedContentsから値を受け取る
   const location = useLocation();
@@ -17,22 +15,20 @@ export function Profs() {
   const params = useParams();
 
   const [profText, setProfText] = useState("Loading...");
+  const [profCategory, setProfCategory] = useState("Loading...");
   const profId = params.profId;
 
   useEffect(() => {
     if (!location.state) {
       dataRead("profSamples", profId).then((res) => {
-        console.log(res);
         setProfText(res.content);
+        setProfCategory(res.categoryId);
       });
     } else {
       setProfText(location.state.profText);
+      setProfCategory(location.state.categoryId);
     }
   }, []);
-
-  const { friendsList, setFriendsList } = useFriendsListContext();
-  console.log("friendsList at Profs.jsx");
-  console.log(friendsList);
 
   return (
     <>
@@ -48,7 +44,11 @@ export function Profs() {
       </div>
 
       <div className="chats_question">{profText}</div>
-      <ProfContents profId={profId} friendsList={friendsList} />
+      <ProfContents
+        profId={profId}
+        profText={profText}
+        categoryId={profCategory}
+      />
     </>
   );
 }
